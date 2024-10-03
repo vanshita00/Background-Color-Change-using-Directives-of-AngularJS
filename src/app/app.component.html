@@ -1,0 +1,15 @@
+<div>
+  <h1>Change Background Color</h1>
+  <label for="numberInput">Enter a number (1, 2, or 3): </label>
+  <input 
+    type="text" 
+    [(ngModel)]="inputValue"  
+    (input)="validateInput()" 
+    id="numberInput"
+  >
+</div>
+<div *ngIf="isValid && inputValue !== undefined" [appBackgroundColor]="inputValue"></div>
+<div *ngIf="!isValid">
+  <p>Please enter a valid number (1, 2, or 3).</p>
+</div>
+
